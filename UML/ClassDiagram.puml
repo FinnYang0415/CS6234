@@ -1,0 +1,34 @@
+@startuml
+Class Student {
+- StudnetId: String
+- Name: String
+- Age: int
+- Email: String
+
++ registerCourse(course: Course): boolean
++ dropCourse(course: Course): boolean
++ viewSchedule(): List<Course>
+}
+
+Class Course {
+- courseId: String
+- title: String
+- seats: int
+
++ hasSeat(): boolean
++ addStudent()
++ removeStudent()
+}
+
+Class RegisterService {
++ register(student: Student, course: Course): boolean
++ drop(student: Student, course: Course): boolean
+}
+
+Student "1" -- "0..*" Enrollment
+Course  "1" -- "0..*" Enrollment
+
+RegisterService ..> Student : uses
+RegisterService ..> Course : uses
+RegisterService ..> Enrollment : creates
+@enduml

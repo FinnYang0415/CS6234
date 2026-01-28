@@ -1,0 +1,10 @@
+@startuml
+[*] --> Plan
+Plan --> Open : adminOpens()
+
+Open --> Full : seats == 0
+Open --> Close : adminCloses()
+
+Close --> [*]
+
+@enduml

@@ -1,0 +1,16 @@
+@startuml
+
+component "Web UI" as UI
+component "Admin Service" as Admin
+component "Registration Service" as Reg
+component "Course Service" as Cs
+database "Course DB" as DB
+
+UI --> Admin : login()
+UI --> Cs : searchCourses()
+UI --> Reg : register()/drop()
+
+Cs --> DB : read courses
+Reg --> DB : read/write enrollments
+
+@enduml

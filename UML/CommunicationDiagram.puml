@@ -1,0 +1,15 @@
+@startuml
+Object Student
+Object "Web UI" as Web
+Object "Register Service" as Service
+Object "Course Database" as DB
+
+Student -> Web : 1. clickRegister(Course ID)
+Web -> Service : 2. Register(Course ID, Student ID)
+Service -> DB : 3. CheckSeat(Course ID)
+DB -> Service : 4. SeatStatus
+Service -> DB : 5. Enrollment(Student ID)
+Service -> Web : 6. Confirmation()
+Web -> Student : 7. RegistrationResult()
+
+@enduml

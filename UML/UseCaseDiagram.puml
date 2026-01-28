@@ -1,0 +1,23 @@
+@startuml
+left to right direction
+actor Student
+actor “School Administrator" as actor2
+rectangle "Course Register System"{
+(Search Course) as case1
+(Register Course) as case2
+(Drop Course) as case3
+(View Own Schedule) as case4
+
+(Create Course Information) as case5
+(Open/Close Registration) as case6
+}
+
+Student -> case1
+Student -> case2
+Student -> case3
+Student -> case4
+
+actor2 -> case5
+actor2 -> case6
+@enduml
+
