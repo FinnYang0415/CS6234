@@ -1,0 +1,15 @@
+@startuml
+start
+:Student Log In;
+:Search Course;
+
+if(Course has seats?) then (yes)
+:Add course to schedule;
+:Confirm registration;
+:System saves enrollment;
+:Show Success message;
+else (no)
+:Show "Course FUll!";
+endif
+stop
+@enduml
